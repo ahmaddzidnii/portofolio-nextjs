@@ -9,9 +9,11 @@ import { Logo } from "./logo";
 import { ModeToggle } from "./toogle-theme";
 import MobileSidebar from "./mobile-sidebar";
 import { cn } from "@/lib/utils";
+import { useScrollTop } from "@/hooks/use-scroll-navbar";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const isScroled = useScrollTop();
 
   const midNavbar = [
     {
@@ -55,20 +57,20 @@ const Navbar = () => {
   ];
 
   return (
-    <header className=" fixed top-0 flex w-full h-20 justify-between items-center p-4 border-b shadow-sm bg-white dark:bg-slate-900">
+    <header className={cn("fixed top-0 z-[99999] flex w-full mx-auto h-20 justify-between items-center p-4 border-b shadow-sm transition-all duration-300 ease-in-out ", isScroled && "bg-white dark:bg-slate-900")}>
       <div className="flex items-center gap-x-2">
         <MobileSidebar />
         <Logo />
       </div>
       <nav className="gap-x-5 mx-auto hidden md:flex">
         {midNavbar.map((item) => (
-          <Link key={item.name} href={item.href} className="relative group">
+          <Link key={item.name} href={item.href} className="relative group font-bold">
             {item.name}
             <span className={cn("h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ", item.isActive ? "w-full" : "w-0")}></span>
           </Link>
         ))}
       </nav>
-      <nav className="ms-auto hidden sm:flex  items-center gap-x-3">
+      <nav className="ms-auto hidden sm:flex  items-center gap-x-3 mr-4">
         {endNavbar.map((item) => (
           <Link key={item.name} href={item.href} target="_blank">
             {item.icon}
