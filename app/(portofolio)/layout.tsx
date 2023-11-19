@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 const PortofolioLayout = ({ children }: { children: React.ReactNode }) => {
@@ -5,6 +6,7 @@ const PortofolioLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Navbar />
       <main className="pt-20">{children}</main>
+      <Footer />
     </>
   );
 };
