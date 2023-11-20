@@ -55,7 +55,7 @@ const MobileSidebar = () => {
   ];
 
   return (
-    <div className="block md:hidden">
+    <div className="hidden sm:block">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="ghost">

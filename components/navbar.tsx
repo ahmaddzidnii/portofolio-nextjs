@@ -58,11 +58,11 @@ const Navbar = () => {
 
   return (
     <header className={cn("fixed z-[100] top-0 flex w-full mx-auto h-20 justify-between items-center p-4 border-b shadow-sm transition-all duration-300 ease-in-out ", isScroled && "bg-white dark:bg-slate-900")}>
-      <div className="flex items-center gap-x-2">
+      <div className="flex items-center gap-x-2 ">
         <MobileSidebar />
         <Logo />
       </div>
-      <nav className="gap-x-5 mx-auto hidden md:flex">
+      <nav className="gap-x-5 mx-auto flex sm:hidden">
         {midNavbar.map((item) => (
           <Link key={item.name} href={item.href} className="relative group font-bold">
             {item.name}
@@ -70,7 +70,7 @@ const Navbar = () => {
           </Link>
         ))}
       </nav>
-      <nav className="ms-auto hidden sm:flex  items-center gap-x-3 mr-4">
+      <nav className="ms-auto  flex sm:hidden items-center gap-x-3 mr-4">
         {endNavbar.map((item) => (
           <Link key={item.name} href={item.href} target="_blank">
             {item.icon}
