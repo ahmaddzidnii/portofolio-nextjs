@@ -15,7 +15,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const isScroled = useScrollTop();
 
- const midNavbar = [
+  const midNavbar = [
     {
       name: "Home",
       href: "/",
@@ -57,7 +57,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={cn("fixed top-0 flex w-full mx-auto h-20 justify-between items-center p-4 border-b shadow-sm transition-all duration-300 ease-in-out ", isScroled && "bg-white dark:bg-slate-900")}>
+    <header className={cn("fixed z-[100] top-0 flex w-full mx-auto h-20 justify-between items-center p-4 border-b shadow-sm transition-all duration-300 ease-in-out ", isScroled && "bg-white dark:bg-slate-900")}>
       <div className="flex items-center gap-x-2">
         <MobileSidebar />
         <Logo />

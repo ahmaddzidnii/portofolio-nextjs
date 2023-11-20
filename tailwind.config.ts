@@ -1,12 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -71,6 +66,32 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    // screens: {
+    //   xs: "479px",
+    //   sm: "639px",
+    //   md: "767px",
+    //   lg: "1023px",
+    //   xl: "1279px",
+    //   "2xl": "1535px",
+    // },
+    screens: {
+      "2xl": { max: "1535px" },
+      // => @media (max-width: 1535px) { ... }
+
+      xl: { max: "1279px" },
+      // => @media (max-width: 1279px) { ... }
+
+      lg: { max: "1023px" },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: "639px" },
+      // => @media (max-width: 639px) { ... }
+      xs: { max: "479px" },
+      // => @media (max-width: 479px) { ... }
+    },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

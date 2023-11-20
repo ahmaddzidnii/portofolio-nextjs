@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="flex w-full min-h-screen  max-w-7xl mx-auto items-center px-10">
+      <div className="flex w-full min-h-screen  max-w-7xl mx-auto items-center ">
         <div className="grid grid-cols-1 md:grid-cols-5 items-center gap-y-10 lg:gap-y-0">
           <div className="col-span-2 ">
             <Image src="/img/profile.jpg" alt="profile" width={400} height={400} className="mx-auto rounded-full border-8 border-yellow-400" />
