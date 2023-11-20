@@ -15,7 +15,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const isScroled = useScrollTop();
 
-  const midNavbar = [
+ const midNavbar = [
     {
       name: "Home",
       href: "/",
