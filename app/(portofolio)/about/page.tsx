@@ -4,6 +4,7 @@ import AnimateNumber from "../_components/animated-number";
 import Experience from "../_components/experience";
 import Skils from "../_components/skils";
 import Sertifikat from "./_components/sertifikat";
+import Education from "./_components/education";
 
 export const metadata = {
   title: "About",
@@ -49,9 +50,10 @@ const AboutPage = async () => {
       <div className="w-full">
         <Skils />
       </div>
-      <div className="w-full">
-        <Experience />
-      </div>
+
+      <Experience />
+      <Education />
+
       <div className="w-full">
         <Sertifikat />
       </div>

@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed z-[100] top-0 w-full  bg-slate-50 dark:bg-slate-900 p-4 border-b shadow-sm ">
-      <div className="flex  justify-between  h-20 w-full  items-center container mx-auto sm:!px-0 ">
+      <div className="flex  justify-between  h-14 w-full  items-center container mx-auto sm:!px-0 ">
         <div className="flex items-center gap-x-2 ">
           <MobileSidebar />
           <Logo />
