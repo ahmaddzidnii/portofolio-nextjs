@@ -12,7 +12,7 @@ export const metadata = {
 const AboutPage = async () => {
   return (
     <main className="flex flex-col w-full items-center justify-center pt-16">
-      <AnimatedText text="Semangat Bang!" className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8" />
+      <AnimatedText text="About Me!`" className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8" />
       <div className="w-full grid grid-cols-8 gap-16 sm:gap-8  xl:col-span-4   ">
         <div className="col-span-3 flex flex-col items-start justify-start md:order-2 md:col-span-8">
           <h2 className="mb-4 text-lg font-bold uppercase">Biography</h2>
