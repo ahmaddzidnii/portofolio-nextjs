@@ -41,7 +41,7 @@ const Experience = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-64 flex flex-col items-center">
+    <div className="my-64 flex flex-col items-center md:my-32  sm:my-16 xs:my-8">
       <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Pengalaman</h2>
       <div ref={ref} className="mx-auto relative">
         <motion.div style={{ scaleY: scrollYProgress }} className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top" />

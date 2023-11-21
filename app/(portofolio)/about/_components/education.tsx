@@ -31,14 +31,14 @@ const Education = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-64 flex flex-col items-center">
+    <div className="my-64 flex flex-col items-center md:my-32 sm:my-16">
       <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Education</h2>
       <div ref={ref} className=" relative mx-auto">
         <motion.div style={{ scaleY: scrollYProgress }} className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top" />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
-          <Details type="SD" time="2010 - 2015" place="SD Negeri 1 Depok" />
-          <Details type="SMP" time="2010 - 2015" place="SMP Negeri 3 Depok" />
-          <Details type="SMA" time="2010 - 2015" place="SMP Negeri 1 Depok" />
+          <Details type="SD" time="2014 - 2017" place="SD Negeri 1 Depok" />
+          <Details type="SMP" time="2017 - 2020" place="SMP Negeri 3 Depok" />
+          <Details type="SMA" time="2020 - 2023" place="SMP Negeri 1 Depok" />
           <Details type="Kuliah" time="2023 - Now" place="UIN Sunan Kalijaga" />
         </ul>
       </div>

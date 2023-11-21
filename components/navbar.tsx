@@ -32,9 +32,9 @@ const Navbar = () => {
       isActive: pathname == "/projects",
     },
     {
-      name: "Articles",
-      href: "/articles",
-      isActive: pathname == "/articles",
+      name: "Contact",
+      href: "/contact",
+      isActive: pathname == "/contact",
     },
   ];
 

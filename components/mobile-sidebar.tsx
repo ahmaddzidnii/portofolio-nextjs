@@ -31,9 +31,9 @@ const MobileSidebar = () => {
       isActive: pathname == "/projects",
     },
     {
-      name: "Articles",
-      href: "/articles",
-      isActive: pathname == "/articles",
+      name: "Contact",
+      href: "/contact",
+      isActive: pathname == "/contact",
     },
   ];
 
@@ -70,7 +70,7 @@ const MobileSidebar = () => {
           <div className="flex flex-col gap-y-20  my-10">
             <div className="flex flex-col space-y-2">
               {midNavbar.map((item) => (
-                <Button onClick={() => setOpen(false)} key={item.name} variant="ghost" asChild>
+                <Button onClick={() => setOpen(false)} key={item.name} variant={item.isActive ? "default" : "ghost"} asChild>
                   <Link href={item.href}>{item.name}</Link>
                 </Button>
               ))}
