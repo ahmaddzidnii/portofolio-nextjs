@@ -2,6 +2,8 @@ import Image from "next/image";
 import AnimatedText from "../_components/animation-text";
 import AnimateNumber from "../_components/animated-number";
 import Experience from "../_components/experience";
+import Skils from "../_components/skils";
+import Sertifikat from "./_components/sertifikat";
 
 export const metadata = {
   title: "About",
@@ -9,7 +11,7 @@ export const metadata = {
 const AboutPage = async () => {
   return (
     <main className="flex flex-col w-full items-center justify-center pt-16">
-      <AnimatedText text="Semangat Bang!" className="lg:!text-7xl sm:!text-6xl xs:!text-4xl  mb-16 sm:mb-8" />
+      <AnimatedText text="Semangat Bang!" className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8" />
       <div className="w-full grid grid-cols-8 gap-16 sm:gap-8  xl:col-span-4   ">
         <div className="col-span-3 flex flex-col items-start justify-start md:order-2 md:col-span-8">
           <h2 className="mb-4 text-lg font-bold uppercase">Biography</h2>
@@ -26,13 +28,13 @@ const AboutPage = async () => {
         <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center  md:order-3">
           <div className="flex flex-col items-end justify-center xl:items-center ">
             <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-              <AnimateNumber value={0} /> +
+              <AnimateNumber value={0} />
             </span>
-            <h2 className="text-xl font-medium capitalize xl:text-center md:text-lg sm:text-base xs:text-sm">Years of Experience</h2>
+            <h2 className="text-xl font-medium capitalize xl:text-center md:text-lg sm:text-base xs:text-sm">Pengalaman</h2>
           </div>
           <div className="flex flex-col items-end justify-center xl:items-center ">
             <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-              <AnimateNumber value={5} /> +
+              <AnimateNumber value={5} />
             </span>
             <h2 className="text-xl font-medium capitalize xl:text-center md:text-lg sm:text-base xs:text-sm">Project</h2>
           </div>
@@ -45,7 +47,13 @@ const AboutPage = async () => {
         </div>
       </div>
       <div className="w-full">
+        <Skils />
+      </div>
+      <div className="w-full">
         <Experience />
+      </div>
+      <div className="w-full">
+        <Sertifikat />
       </div>
     </main>
   );

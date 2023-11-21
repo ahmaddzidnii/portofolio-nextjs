@@ -15,7 +15,7 @@ const TypingText = () => {
       ]}
       speed={30}
       wrapper="span"
-      className="text-2xl md:text-3xl"
+      className="text-2xl  sm:text-xl"
       repeat={Infinity}
       preRenderFirstString
     />

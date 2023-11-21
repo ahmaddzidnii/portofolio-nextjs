@@ -5,7 +5,7 @@ const PortofolioLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className="pt-20 px-10">{children}</main>
+      <main className="pt-20  container">{children}</main>
       <Footer />
     </>
   );

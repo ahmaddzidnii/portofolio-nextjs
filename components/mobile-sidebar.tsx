@@ -1,6 +1,6 @@
 "use client";
 import { MenuIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet";
 import { Logo } from "./logo";
@@ -12,6 +12,7 @@ import Link from "next/link";
 
 const MobileSidebar = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   const midNavbar = [
     {
@@ -56,7 +57,7 @@ const MobileSidebar = () => {
 
   return (
     <div className="hidden sm:block">
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost">
             <MenuIcon />
@@ -69,7 +70,7 @@ const MobileSidebar = () => {
           <div className="flex flex-col gap-y-20  my-10">
             <div className="flex flex-col space-y-2">
               {midNavbar.map((item) => (
-                <Button key={item.name} variant="ghost" asChild>
+                <Button onClick={() => setOpen(false)} key={item.name} variant="ghost" asChild>
                   <Link href={item.href}>{item.name}</Link>
                 </Button>
               ))}

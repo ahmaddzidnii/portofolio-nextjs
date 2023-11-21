@@ -57,27 +57,29 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={cn("fixed z-[100] top-0 flex w-full mx-auto h-20 justify-between items-center p-4 border-b shadow-sm transition-all duration-300 ease-in-out ", isScroled && "bg-white dark:bg-slate-900")}>
-      <div className="flex items-center gap-x-2 ">
-        <MobileSidebar />
-        <Logo />
+    <header className="fixed z-[100] top-0 w-full  bg-slate-50 dark:bg-slate-900 p-4 border-b shadow-sm ">
+      <div className="flex  justify-between  h-20 w-full  items-center container mx-auto sm:!px-0 ">
+        <div className="flex items-center gap-x-2 ">
+          <MobileSidebar />
+          <Logo />
+        </div>
+        <nav className="gap-x-5 mx-auto flex md:hidden">
+          {midNavbar.map((item) => (
+            <Link key={item.name} href={item.href} className="relative group font-bold">
+              {item.name}
+              <span className={cn("h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ", item.isActive ? "w-full" : "w-0")}></span>
+            </Link>
+          ))}
+        </nav>
+        <nav className="ms-auto  flex md:hidden items-center gap-x-3 mr-4">
+          {endNavbar.map((item) => (
+            <Link key={item.name} href={item.href} target="_blank">
+              {item.icon}
+            </Link>
+          ))}
+        </nav>
+        <ModeToggle />
       </div>
-      <nav className="gap-x-5 mx-auto flex sm:hidden">
-        {midNavbar.map((item) => (
-          <Link key={item.name} href={item.href} className="relative group font-bold">
-            {item.name}
-            <span className={cn("h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ", item.isActive ? "w-full" : "w-0")}></span>
-          </Link>
-        ))}
-      </nav>
-      <nav className="ms-auto  flex sm:hidden items-center gap-x-3 mr-4">
-        {endNavbar.map((item) => (
-          <Link key={item.name} href={item.href} target="_blank">
-            {item.icon}
-          </Link>
-        ))}
-      </nav>
-      <ModeToggle />
     </header>
   );
 };
