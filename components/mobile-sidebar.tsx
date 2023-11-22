@@ -9,8 +9,9 @@ import { usePathname } from "next/navigation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
-const MobileSidebar = () => {
+const MobileSidebar = ({ user }: { user: any }) => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -57,7 +58,7 @@ const MobileSidebar = () => {
 
   return (
     <div className="hidden sm:block">
-      <Sheet open={open} onOpenChange={setOpen}>
+      <Sheet modal={false} open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost">
             <MenuIcon />
@@ -65,9 +66,36 @@ const MobileSidebar = () => {
         </SheetTrigger>
         <SheetContent side="left">
           <SheetHeader>
-            <Logo />
+            {user ? (
+              <div className="flex items-center gap-x-4">
+                <UserButton afterSignOutUrl="/" />
+                <h1 className="text-xl font-bold">{user}</h1>
+              </div>
+            ) : (
+              <Button asChild variant="ghost">
+                <Link href="/login">Login</Link>
+              </Button>
+            )}
           </SheetHeader>
-          <div className="flex flex-col gap-y-20  my-10">
+          <div className="flex flex-col items-center justify-between h-[80%] mt-6">
+            <div className="flex flex-col space-y-2 w-full">
+              {midNavbar.map((item) => (
+                <Button onClick={() => setOpen(false)} key={item.name} variant={item.isActive ? "default" : "ghost"} asChild>
+                  <Link href={item.href}>{item.name}</Link>
+                </Button>
+              ))}
+            </div>
+            <div className="flex items-center justify-center w-full">
+              {endNavbar.map((item) => (
+                <Button key={item.name} variant="ghost" asChild>
+                  <Link href={item.href} target="_blank">
+                    {item.icon}
+                  </Link>
+                </Button>
+              ))}
+            </div>
+          </div>
+          {/* <div className="flex flex-col gap-y-20  my-10">
             <div className="flex flex-col space-y-2">
               {midNavbar.map((item) => (
                 <Button onClick={() => setOpen(false)} key={item.name} variant={item.isActive ? "default" : "ghost"} asChild>
@@ -84,7 +112,8 @@ const MobileSidebar = () => {
                 </Button>
               ))}
             </div>
-          </div>
+            
+          </div> */}
         </SheetContent>
       </Sheet>
     </div>

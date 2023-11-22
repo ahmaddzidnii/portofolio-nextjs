@@ -1,41 +1,20 @@
-"use client";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { BiSolidLogInCircle } from "react-icons/bi";
+
+import { currentUser } from "@clerk/nextjs";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { Logo } from "./logo";
 import { ModeToggle } from "./toogle-theme";
 import MobileSidebar from "./mobile-sidebar";
-import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
+import NavLink from "./nav-link";
+import { Button } from "./ui/button";
 
-const Navbar = () => {
-  const pathname = usePathname();
-
-  const midNavbar = [
-    {
-      name: "Home",
-      href: "/",
-      isActive: pathname == "/",
-    },
-    {
-      name: "About",
-      href: "/about",
-      isActive: pathname == "/about",
-    },
-    {
-      name: "Projects",
-      href: "/projects",
-      isActive: pathname == "/projects",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-      isActive: pathname == "/contact",
-    },
-  ];
+const Navbar = async () => {
+  const user = await currentUser();
 
   const endNavbar = [
     {
@@ -59,26 +38,29 @@ const Navbar = () => {
     <header className="fixed z-[100] top-0 w-full  bg-slate-50 dark:bg-slate-900 p-4 border-b shadow-sm ">
       <div className="flex  justify-between  h-14 w-full  items-center container mx-auto sm:!px-0 ">
         <div className="flex items-center gap-x-2 ">
-          <MobileSidebar />
+          <MobileSidebar user={user?.firstName} />
           <Logo />
         </div>
-        <nav className="gap-x-5 mx-auto flex md:hidden">
-          {midNavbar.map((item) => (
-            <Link key={item.name} href={item.href} className="relative group font-bold">
-              {item.name}
-              <span className={cn("h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ", item.isActive ? "w-full" : "w-0")}></span>
-            </Link>
-          ))}
-        </nav>
+        <NavLink />
         <nav className="ms-auto  flex md:hidden items-center gap-x-3 mr-4">
           {endNavbar.map((item) => (
             <Link key={item.name} href={item.href} target="_blank">
               {item.icon}
             </Link>
           ))}
+          <ModeToggle />
         </nav>
-        <ModeToggle />
-        {/* <UserButton /> */}
+        <div className="xs:hidden">
+          {!user ? (
+            <Button variant="ghost">
+              <Link href="/login">
+                <BiSolidLogInCircle className="w-7 h-7" />
+              </Link>
+            </Button>
+          ) : (
+            <UserButton afterSignOutUrl="/"  />
+          )}
+        </div>
       </div>
     </header>
   );

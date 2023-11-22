@@ -22,7 +22,9 @@ export default function Home() {
               Selamat datang di portofolio saya. portofolio ini dibuat mengguanakan framework next js. Portofolio ini dibuat untuk memenuhi tugas akhir dari mata kuliah Pemrograman Web tapi boong.
             </p>
             <div className="mt-5 flex gap-x-5 sm:justify-center">
-              <Button>Contact me</Button>
+              <Button asChild>
+                <Link href="/contact">Contact me</Link>
+              </Button>
               <Button variant="outline" asChild>
                 <Link href="https://anime.ahmadzidni.site" target="_blank">
                   Website
