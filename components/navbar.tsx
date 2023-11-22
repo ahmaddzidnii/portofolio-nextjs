@@ -9,11 +9,10 @@ import { Logo } from "./logo";
 import { ModeToggle } from "./toogle-theme";
 import MobileSidebar from "./mobile-sidebar";
 import { cn } from "@/lib/utils";
-import { useScrollTop } from "@/hooks/use-scroll-navbar";
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const isScroled = useScrollTop();
 
   const midNavbar = [
     {
@@ -79,6 +78,7 @@ const Navbar = () => {
           ))}
         </nav>
         <ModeToggle />
+        {/* <UserButton /> */}
       </div>
     </header>
   );
