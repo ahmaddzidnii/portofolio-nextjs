@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { useScroll, motion } from "framer-motion";
-import LiIcon from "./li-icon";
+import LiIcon from "@/components/li-icon";
 
 interface DetailsProps {
   postion: string;

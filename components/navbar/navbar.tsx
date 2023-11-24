@@ -2,16 +2,14 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BiSolidLogInCircle } from "react-icons/bi";
 
-import { currentUser } from "@clerk/nextjs";
-
 import Link from "next/link";
+import { UserButton, currentUser } from "@clerk/nextjs";
 
-import { Logo } from "./logo";
-import { ModeToggle } from "./toogle-theme";
-import MobileSidebar from "./mobile-sidebar";
-import { UserButton } from "@clerk/nextjs";
-import NavLink from "./nav-link";
-import { Button } from "./ui/button";
+import { Logo } from "@/components/logo";
+import { ModeToggle } from "@/components/toogle-theme";
+import MobileSidebar from "@/components/navbar/mobile-sidebar";
+import NavLink from "@/components/navbar/nav-link";
+import { Button } from "@/components/ui/button";
 
 const Navbar = async () => {
   const user = await currentUser();

@@ -3,16 +3,16 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import toast from "react-hot-toast";
+import { useUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import React, { useState } from "react";
-import { useUser } from "@clerk/nextjs";
-import toast from "react-hot-toast";
-import UiNoLogin from "./ui-no-login";
+import UiNoLogin from "@/app/(portofolio)/contact/_components/ui-no-login";
+import SpinnerLoading from "@/components/spinner-loader";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -119,7 +119,7 @@ function FormComponents() {
           )}
         />
         <Button disabled={isloading} className="w-full" type="submit">
-          {isloading ? "Loading..." : "Submit"}
+          {isloading ? <SpinnerLoading /> : "Submit"}
         </Button>
       </form>
     </Form>

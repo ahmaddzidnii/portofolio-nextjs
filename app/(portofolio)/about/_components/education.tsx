@@ -1,8 +1,7 @@
 "use client";
-import Link from "next/link";
 import { useRef } from "react";
 import { useScroll, motion } from "framer-motion";
-import LiIcon from "../../_components/li-icon";
+import LiIcon from "@/components/li-icon";
 
 interface DetailsProps {
   type: string;

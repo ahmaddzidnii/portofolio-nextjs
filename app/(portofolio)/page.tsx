@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Image from "next/image";
-import TypingText from "./_components/typing-animation";
+import TypingText from "@/components/typing-animation";
 import Link from "next/link";
 
 export const metadata: Metadata = {

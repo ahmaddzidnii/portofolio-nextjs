@@ -1,16 +1,17 @@
 "use client";
 import { MenuIcon } from "lucide-react";
-import React, { useState } from "react";
-import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet";
-import { Logo } from "./logo";
-import { usePathname } from "next/navigation";
-
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+import React, { useState } from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { ModeToggle } from "./toogle-theme";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+import { Logo } from "@/components/logo";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/toogle-theme";
 
 const MobileSidebar = () => {
   const pathname = usePathname();

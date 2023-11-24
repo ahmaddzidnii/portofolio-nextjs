@@ -18,7 +18,7 @@ const Sertifikat = () => {
         >
           <div className="relative group overflow-hidden">
             <Image src="/img/sertifikat/BE.png" width={300} height={200} alt="dd" className="w-full h-auto rounded-2xl " />
-            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
+            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
               <Button asChild variant="default" size="lg">
                 <Link target="_blank" href="https://www.dicoding.com/certificates/QLZ9RN52DP5D">
                   Lihat
@@ -37,7 +37,7 @@ const Sertifikat = () => {
         >
           <div className="relative group overflow-hidden">
             <Image src="/img/sertifikat/DJS.png" width={300} height={200} alt="dd" className="w-full h-auto rounded-2xl " />
-            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
+            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
               <Button asChild variant="default" size="lg">
                 <Link target="_blank" href="https://www.dicoding.com/certificates/1OP81M2MQZQK">
                   Lihat
@@ -56,7 +56,7 @@ const Sertifikat = () => {
         >
           <div className="relative group overflow-hidden">
             <Image src="/img/sertifikat/AWS.png" width={300} height={200} alt="dd" className="w-full h-auto rounded-2xl " />
-            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
+            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
               <Button asChild variant="default" size="lg">
                 <Link target="_blank" href="https://www.dicoding.com/certificates/81P27D7MNZOY">
                   Lihat
@@ -75,7 +75,7 @@ const Sertifikat = () => {
         >
           <div className="relative group overflow-hidden">
             <Image src="/img/sertifikat/JSI.png" width={300} height={200} alt="dd" className="w-full h-auto rounded-2xl " />
-            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
+            <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
               <Button asChild variant="default" size="lg">
                 <Link target="_blank" href="https://www.sololearn.com/certificates/CC-RZMMCEBH">
                   Lihat

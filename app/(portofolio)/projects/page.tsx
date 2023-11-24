@@ -1,4 +1,4 @@
-import AnimatedText from "../_components/animation-text";
+import AnimatedText from "@/components/framer-motion/animation-text";
 import FeaturedProject from "./_components/featured-project";
 import Project from "./_components/project";
 

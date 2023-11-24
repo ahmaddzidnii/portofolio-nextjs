@@ -1,10 +1,9 @@
-import Image from "next/image";
-import AnimatedText from "../_components/animation-text";
-import AnimateNumber from "../_components/animated-number";
-import Experience from "../_components/experience";
-import Skils from "../_components/skils";
-import Sertifikat from "./_components/sertifikat";
-import Education from "./_components/education";
+import AnimatedText from "@/components/framer-motion/animation-text";
+import AnimateNumber from "@/components/framer-motion/animated-number";
+import Experience from "@/app/(portofolio)/about/_components/experience";
+import Skils from "@/app/(portofolio)/about/_components/skils";
+import Sertifikat from "@/app/(portofolio)/about/_components/sertifikat";
+import Education from "@/app/(portofolio)/about/_components/education";
 
 export const metadata = {
   title: "About",
