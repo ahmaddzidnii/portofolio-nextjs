@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import toast from "react-hot-toast";
+import UiNoLogin from "./ui-no-login";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -66,11 +67,11 @@ function FormComponents() {
   }
 
   if (!isLoaded) {
-    return <h1>Loading...</h1>;
+    return <div className="text-center text-3xl">Loading..</div>;
   }
 
   if (!isSignedIn) {
-    return <h1 className="text-center">Login untuk mengirim pesan!</h1>;
+    return <UiNoLogin />;
   }
 
   return (

@@ -6,7 +6,7 @@ const TypingText = () => {
     <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed once, initially
-        "I'm a Pemula Web Developer.",
+        "I'm a Beginner Web Developer.",
         3000,
         "I'm studying informatika in UIN Suka.",
         4000,
