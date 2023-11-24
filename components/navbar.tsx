@@ -38,7 +38,7 @@ const Navbar = async () => {
     <header className="fixed z-[100] top-0 w-full  bg-slate-50 dark:bg-slate-900 p-4 border-b shadow-sm ">
       <div className="flex  justify-between  h-14 w-full  items-center container mx-auto sm:!px-0 ">
         <div className="flex items-center gap-x-2 ">
-          <MobileSidebar user={user?.firstName} />
+          <MobileSidebar />
           <Logo />
         </div>
         <NavLink />
@@ -58,7 +58,7 @@ const Navbar = async () => {
               </Link>
             </Button>
           ) : (
-            <UserButton afterSignOutUrl="/"  />
+            <UserButton afterSignOutUrl="/" />
           )}
         </div>
       </div>
