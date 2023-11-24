@@ -9,11 +9,14 @@ import { usePathname } from "next/navigation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { ModeToggle } from "./toogle-theme";
 
-const MobileSidebar = ({ user }: { user: any }) => {
+const MobileSidebar = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const { user, isSignedIn } = useUser();
 
   const midNavbar = [
     {
@@ -66,10 +69,10 @@ const MobileSidebar = ({ user }: { user: any }) => {
         </SheetTrigger>
         <SheetContent side="left">
           <SheetHeader>
-            {user ? (
+            {isSignedIn ? (
               <div className="flex items-center gap-x-4">
                 <UserButton afterSignOutUrl="/" />
-                <h1 className="text-xl font-bold">{user}</h1>
+                <h1 className="text-xl font-bold">{user?.firstName}</h1>
               </div>
             ) : (
               <Button asChild variant="ghost">
@@ -77,7 +80,7 @@ const MobileSidebar = ({ user }: { user: any }) => {
               </Button>
             )}
           </SheetHeader>
-          <div className="flex flex-col items-center justify-between h-[80%] mt-6">
+          <div className="flex flex-col items-center justify-between h-[90%] mt-6">
             <div className="flex flex-col space-y-2 w-full">
               {midNavbar.map((item) => (
                 <Button onClick={() => setOpen(false)} key={item.name} variant={item.isActive ? "default" : "ghost"} asChild>
@@ -85,6 +88,7 @@ const MobileSidebar = ({ user }: { user: any }) => {
                 </Button>
               ))}
             </div>
+            <ModeToggle />
             <div className="flex items-center justify-center w-full">
               {endNavbar.map((item) => (
                 <Button key={item.name} variant="ghost" asChild>

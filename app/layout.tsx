@@ -23,12 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <ClerkProvider appearance={{ baseTheme: shadesOfPurple }}>
-          <NextTopLoader showSpinner={false} height={5} />
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
-        </ClerkProvider>
+        <NextTopLoader showSpinner={false} height={5} />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ClerkProvider appearance={{ baseTheme: shadesOfPurple }}>{children}</ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
