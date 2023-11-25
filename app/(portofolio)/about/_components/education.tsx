@@ -37,7 +37,7 @@ const Education = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <Details type="SD" time="2014 - 2017" place="SD Negeri 1 Depok" />
           <Details type="SMP" time="2017 - 2020" place="SMP Negeri 3 Depok" />
-          <Details type="SMA" time="2020 - 2023" place="SMP Negeri 1 Depok" />
+          <Details type="SMA" time="2020 - 2023" place="SMA Negeri 1 Depok" />
           <Details type="Kuliah" time="2023 - Now" place="UIN Sunan Kalijaga" />
         </ul>
       </div>

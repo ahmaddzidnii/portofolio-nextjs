@@ -2,30 +2,13 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { midNavbar } from "@/data/navbar";
 
 const NavLink = () => {
   const pathname = usePathname();
 
-  const midNavbar = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Projects",
-      href: "/projects",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-  ];
   return (
-    <nav className="gap-x-5 mx-auto flex md:hidden">
+    <nav className="gap-x-5 mx-auto flex lg:hidden">
       {midNavbar.map((item) => (
         <Link key={item.name} href={item.href} className="relative group font-bold">
           {item.name}

@@ -1,9 +1,8 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { BiSolidLogInCircle } from "react-icons/bi";
-
 import Link from "next/link";
 import { UserButton, currentUser } from "@clerk/nextjs";
+
+import { endNavbar } from "@/data/navbar";
+import { BiSolidLogInCircle } from "react-icons/bi";
 
 import { Logo } from "@/components/logo";
 import { ModeToggle } from "@/components/toogle-theme";
@@ -15,27 +14,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 const Navbar = async () => {
   const user = await currentUser();
 
-  const endNavbar = [
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/ahmadzidni1/",
-      icon: <AiFillInstagram className="w-6 h-6" />,
-      tooltip: "Follow me on Instagram",
-    },
-    {
-      name: "Linkedin",
-      href: "https://www.linkedin.com/in/ahmad-zidni-51b602292/",
-      icon: <FaLinkedin className="w-6 h-6" />,
-      tooltip: "Follow me on Linkedin",
-    },
-    {
-      name: "Github",
-      href: "https://github.com/ahmaddzidnii",
-      icon: <FaGithub className="w-6 h-6" />,
-      tooltip: "Follow me on Github",
-    },
-  ];
-
   return (
     <header className="fixed z-[100] top-0 w-full  bg-slate-50 dark:bg-slate-900 p-4 border-b shadow-sm ">
       <div className="flex  justify-between  h-14 w-full  items-center container mx-auto sm:!px-0 ">
@@ -44,7 +22,7 @@ const Navbar = async () => {
           <Logo />
         </div>
         <NavLink />
-        <nav className="ms-auto  flex md:hidden items-center gap-x-3 mr-4">
+        <nav className="ms-auto  flex lg:hidden items-center gap-x-3 mr-4">
           <TooltipProvider>
             {endNavbar.map((item) => (
               <Tooltip key={item.name} delayDuration={200}>

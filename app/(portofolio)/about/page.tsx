@@ -15,9 +15,12 @@ const AboutPage = async () => {
       <div className="w-full grid grid-cols-8 gap-16 sm:gap-8  xl:col-span-4   ">
         <div className="col-span-3 flex flex-col items-start justify-start md:order-2 md:col-span-8">
           <h2 className="mb-4 text-lg font-bold uppercase">Biography</h2>
-          <p className="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, voluptate nulla. Reiciendis repudiandae quam culpa autem beatae quo quas obcaecati.z</p>
-          <p className="my-4 font-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem repudiandae harum voluptatem quis rerum magni magnam perferendis cum numquam nemo.</p>
-          <p className="font-medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam optio aspernatur nam. Explicabo iure illum sint minima, a atque accusantium!</p>
+          <p className="font-medium">
+            Saya lahir pada tanggal 12 Maret 2005 di Sleman, Indonesia, saya memiliki keinginan yang besar untuk menjadi seorang programer yang kompeten. Sejak SMA, saya tertarik dengan dunia teknologi dan komputasi. Ketertarikannya
+            terhadap coding dan perangkat lunak mendorongnya untuk mengejar karier di dunia pemrograman.
+          </p>
+          <p className="my-4 font-medium">Saya pertama kali mengenal coding pada saat saya SMA. Pada saat SMA, saya belajar tentang HTML, CSS, dan JavaScript.</p>
+          <p className="font-medium">Saya sekaranng sedang berkuliah di Universitas Islam Negeri Sunan Kalijaga di Yogyakarta dan mengambil jurusan Informatika. </p>
         </div>
 
         <div className="col-span-3 relative w-full h-max rounded-2xl border-2 border-solid border-black xl:col-span-4 md:order-1 md:col-span-8">
@@ -34,7 +37,7 @@ const AboutPage = async () => {
           </div>
           <div className="flex flex-col items-end justify-center xl:items-center ">
             <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-              <AnimateNumber value={5} />
+              <AnimateNumber value={5} /> +
             </span>
             <h2 className="text-xl font-medium capitalize xl:text-center md:text-lg sm:text-base xs:text-sm">Project</h2>
           </div>

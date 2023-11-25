@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       chat_id,
-      text: `Username: ${username}\nEmail: ${email}\nMessage: ${message}`,
+      text: `Username: ${username}\nEmail: ${email}\nMessage:\n ${message}`,
     }),
   };
 

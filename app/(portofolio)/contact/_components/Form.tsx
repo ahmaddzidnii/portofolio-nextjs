@@ -13,6 +13,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import UiNoLogin from "@/app/(portofolio)/contact/_components/ui-no-login";
 import SpinnerLoading from "@/components/spinner-loader";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -82,9 +83,9 @@ function FormComponents() {
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Username" {...field} />
+                <Input placeholder="Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -111,7 +112,7 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Input placeholder="Message" {...field} />
+                <Textarea placeholder="type your message" className="resize-none h-72" {...field} />
               </FormControl>
               <FormDescription>Min 10 characters!</FormDescription>
               <FormMessage />
