@@ -10,6 +10,7 @@ import { ModeToggle } from "@/components/toogle-theme";
 import MobileSidebar from "@/components/navbar/mobile-sidebar";
 import NavLink from "@/components/navbar/nav-link";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Navbar = async () => {
   const user = await currentUser();
@@ -19,16 +20,19 @@ const Navbar = async () => {
       name: "Instagram",
       href: "https://www.instagram.com/ahmadzidni1/",
       icon: <AiFillInstagram className="w-6 h-6" />,
+      tooltip: "Follow me on Instagram",
     },
     {
       name: "Linkedin",
       href: "https://www.linkedin.com/in/ahmad-zidni-51b602292/",
       icon: <FaLinkedin className="w-6 h-6" />,
+      tooltip: "Follow me on Linkedin",
     },
     {
       name: "Github",
       href: "https://github.com/ahmaddzidnii",
       icon: <FaGithub className="w-6 h-6" />,
+      tooltip: "Follow me on Github",
     },
   ];
 
@@ -41,20 +45,40 @@ const Navbar = async () => {
         </div>
         <NavLink />
         <nav className="ms-auto  flex md:hidden items-center gap-x-3 mr-4">
-          {endNavbar.map((item) => (
-            <Link key={item.name} href={item.href} target="_blank">
-              {item.icon}
-            </Link>
-          ))}
+          <TooltipProvider>
+            {endNavbar.map((item) => (
+              <Tooltip key={item.name} delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Button asChild variant="ghost" size="icon">
+                    <Link href={item.href} target="_blank">
+                      {item.icon}
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{item.tooltip}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </TooltipProvider>
           <ModeToggle />
         </nav>
         <div className="xs:hidden">
           {!user ? (
-            <Button variant="ghost">
-              <Link href="/login">
-                <BiSolidLogInCircle className="w-7 h-7" />
-              </Link>
-            </Button>
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" asChild>
+                    <Link href="/login">
+                      <BiSolidLogInCircle className="w-7 h-7" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Login Now!</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ) : (
             <UserButton afterSignOutUrl="/" />
           )}
