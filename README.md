@@ -1,7 +1,7 @@
 # Fullstack Portofolio: Next.js 13, React, Tailwind
 
-![image](https://github.com/AntonioErdeljac/next13-trello/assets/23248726/fd260249-82fa-4588-a67a-69bb4eb09067)
-
+![image](https://i1.sndcdn.com/artworks-2YKXPOpYQzydh26m-g4IT2Q-t500x500.jpg)
+> [PRODUCTION](https://portofolio.ahmadzidni.site)
 
 This is a repository for Fullstack Portofolio: Next.js 13, React, Tailwind
 
