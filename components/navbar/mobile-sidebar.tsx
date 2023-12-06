@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/toogle-theme";
-import { endNavbar, midNavbar } from "@/data/navbar";
+import { endNavbar, midNavbar } from "@/constant/navbar";
 
 const MobileSidebar = () => {
   const pathname = usePathname();

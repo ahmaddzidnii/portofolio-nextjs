@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { midNavbar } from "@/data/navbar";
+import { midNavbar } from "@/constant/navbar";
 
 const NavLink = () => {
   const pathname = usePathname();
