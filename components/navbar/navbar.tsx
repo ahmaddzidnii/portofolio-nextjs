@@ -10,6 +10,8 @@ import MobileSidebar from "@/components/navbar/mobile-sidebar";
 import NavLink from "@/components/navbar/nav-link";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import dynamic from "next/dynamic";
+import { ProfileNavbar } from "./profile-navbar";
 
 const Navbar = async () => {
   const user = await currentUser();
@@ -42,28 +44,12 @@ const Navbar = async () => {
           <ModeToggle />
         </nav>
         <div className="xs:hidden">
-          {!user ? (
-            <TooltipProvider>
-              <Tooltip delayDuration={200}>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" asChild>
-                    <Link href="/login">
-                      <BiSolidLogInCircle className="w-7 h-7" />
-                    </Link>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Login Now!</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ) : (
-            <UserButton afterSignOutUrl="/" />
-          )}
+          <ProfileNavbar />
         </div>
       </div>
     </header>
   );
 };
 
+// export default dynamic(() => Promise.resolve(Navbar), { ssr: false });
 export default Navbar;

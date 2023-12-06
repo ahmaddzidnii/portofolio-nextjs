@@ -21,6 +21,8 @@ const FeaturedProject = ({ type, title, summary, img, link, github }: FeaturedPr
         <FramerImage
           src={img}
           alt={title}
+          decoding="sync"
+          loading="eager"
           width={400}
           height={300}
           className="w-full h-auto"
