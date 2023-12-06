@@ -46,7 +46,7 @@ function FormComponents() {
     e.preventDefault();
     try {
       setIsLoading(true);
-      await fetch("/api", {
+      const send = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,6 +60,10 @@ function FormComponents() {
         message: "",
       });
       setIsLoading(false);
+
+      if (!send.ok) {
+        throw new Error(send.statusText);
+      }
 
       toast.success("Pesan Terkirim!");
     } catch (error) {

@@ -7,7 +7,7 @@ const UiNoLogin = () => {
   return (
     <div className="min-w-[80%] min-h-[80%] flex justify-center items-center">
       <Button asChild>
-        <Link href="/login?redirect=/contact">Login untuk melanjutkan.</Link>
+        <Link href="/login?redirect_url=/contact">Login untuk melanjutkan.</Link>
       </Button>
     </div>
   );

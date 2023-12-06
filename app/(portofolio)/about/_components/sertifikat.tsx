@@ -8,6 +8,11 @@ const Sertifikat = () => {
   return (
     <div className="flex flex-col w-full items-center justify-center my-32 md:my-16 sm:my-8">
       <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Sertifikat</h2>
+      <div className="py-5">
+        <Button variant="ghost" className="ms-auto" asChild>
+          <Link href="/certificate">Lihat Semua</Link>
+        </Button>
+      </div>
       <div className="grid grid-cols-12 sm:gap-0 sm:gap-y-8 gap-8">
         <motion.div
           initial={{ y: 50 }}
