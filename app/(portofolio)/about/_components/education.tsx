@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { useScroll, motion } from "framer-motion";
 import LiIcon from "@/components/li-icon";
+import { educations } from "@/constant/about";
 
 interface DetailsProps {
   type: string;
@@ -35,10 +36,16 @@ const Education = () => {
       <div ref={ref} className=" relative mx-auto">
         <motion.div style={{ scaleY: scrollYProgress }} className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top" />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
-          <Details type="SD" time="2014 - 2017" place="SD Negeri 1 Depok" />
-          <Details type="SMP" time="2017 - 2020" place="SMP Negeri 3 Depok" />
-          <Details type="SMA" time="2020 - 2023" place="SMA Negeri 1 Depok" />
-          <Details type="Kuliah" time="2023 - Now" place="UIN Sunan Kalijaga" />
+          {
+            educations.map((item,index)=>(
+              <Details
+                key={index}
+                type={item.type}
+                time={item.time}
+                place={item.place}
+              />
+            ))
+          }
         </ul>
       </div>
     </div>

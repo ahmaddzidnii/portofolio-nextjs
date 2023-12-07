@@ -1,5 +1,6 @@
 "use client";
 
+import { skills } from "@/constant/about";
 import { motion } from "framer-motion";
 
 interface SkilProps {
@@ -38,13 +39,16 @@ const Skils = () => {
         >
           WEB
         </motion.div>
-
-        <Skil name="HTML" x="-5vw" y="-10vw" />
-        <Skil name="JavaScript" x="-20vw" y="2vw" />
-        <Skil name="TypeScript" x="20vw" y="6vw" />
-        <Skil name="TailwindCSS" x="0vw" y="12vw" />
-        <Skil name="NextJs" x="-20vw" y="-15vw" />
-        <Skil name="ExpressJs" x="15vw" y="-12vw" />
+        {
+          skills.map((item, index) => (
+            <Skil
+              key={index}
+              name={item.name}
+              x={item.x}
+              y={item.y}
+            />
+          ))
+        }
       </div>
     </>
   );
