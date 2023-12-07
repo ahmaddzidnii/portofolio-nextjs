@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { useScroll, motion } from "framer-motion";
 import LiIcon from "@/components/li-icon";
+import { experience } from "@/constant/about";
 
 interface DetailsProps {
   postion: string;
@@ -46,9 +47,19 @@ const Experience = () => {
       <div ref={ref} className="mx-auto relative">
         <motion.div style={{ scaleY: scrollYProgress }} className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top" />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
-          <Details postion="Backend Developer" company="ahmadzidni" companyLink="https://ahmadzidni.site" time="2023 - Sekarang" address="Yogyakarta" work="Membuat open API untuk aplikasi web." />
-          <Details postion="Frontend Developer" company="ahmadzidni" companyLink="https://ahmadzidni.site" time="2023 - Sekarang" address="Yogyakarta" work="Pengembangan aplikasi web pengecek detail anime." />
-          <Details postion="Fullstack Developer" company="ahmadzidni" companyLink="https://ahmadzidni.site" time="2023 - Sekarang" address="Yogyakarta" work="Pengembangan aplikasi todolist dalam bentuk web." />
+          {
+            experience.map((item,index)=>(
+              <Details 
+              key={index}
+              postion={item.postion}
+              company={item.company}
+              companyLink={item.companyLink}
+              time={item.time}
+              address={item.address}
+              work={item.work}
+              />
+            ))
+          }
         </ul>
       </div>
     </div>
