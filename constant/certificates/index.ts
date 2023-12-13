@@ -28,7 +28,7 @@ export const certificates = [
     credentials: "L4PQQ3654PO1",
     summary:
       "Kelas ini ditujukan bagi pemula yang ingin memahami bagaimana menuliskan kode yang baik dengan paradigma OOP (object-priented programming) dengan mengacu pada standar industri. Di akhir kelas, siswa dapat memahami kelima prinsip SOLID dan siap menerapkannya dalam mengembangkan aplikasi. ",
-    img: "https://placehold.co/1069x719/png",
+    img: "/img/sertifikat/PSOLID.jpg",
     link: "https://www.dicoding.com/certificates/L4PQQ3654PO1",
   },
   {
@@ -36,7 +36,7 @@ export const certificates = [
     credentials: "CC-MS6LXZCV",
     summary:
       "Kelas ini ditujukan untuk individu yang ingin melangkah menjadi seorang Back-End Developer dengan standar kompetensi internasional milik AWS. Di akhir kelas, siswa dapat membuat RESTful API sederhana secara mandiri untuk mendukung fungsionalitas suatu aplikasi.",
-    img: "https://placehold.co/1069x719/png",
+    img: "/img/sertifikat/IJS.jpg",
     link: "https://www.sololearn.com/certificates/CC-MS6LXZCV",
   },
   {
@@ -52,7 +52,7 @@ export const certificates = [
     credentials: "CC-BAP4I3BA",
     summary:
       "Kelas ini ditujukan untuk individu yang ingin melangkah menjadi seorang Back-End Developer dengan standar kompetensi internasional milik AWS. Di akhir kelas, siswa dapat membuat RESTful API sederhana secara mandiri untuk mendukung fungsionalitas suatu aplikasi.",
-    img: "https://placehold.co/1069x719/png",
+    img: "/img/sertifikat/IHTML.jpg",
     link: "https://www.sololearn.com/certificates/CC-BAP4I3BA",
   },
 ];
