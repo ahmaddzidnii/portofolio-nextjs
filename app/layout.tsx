@@ -25,13 +25,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={poppins.className}>
-        <NextTopLoader showSpinner={false} height={5} />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ClerkProvider appearance={{ baseTheme: shadesOfPurple }}>{children}</ClerkProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider appearance={{ baseTheme: shadesOfPurple, layout: { socialButtonsPlacement: "bottom", socialButtonsVariant: "auto", logoImageUrl: "/img/logo-pitik.png" } }}>
+      <html lang="en" suppressHydrationWarning>
+        <body className={poppins.className}>
+          <NextTopLoader showSpinner={false} height={5} />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
