@@ -1,6 +1,11 @@
 "use client";
 import { UserButton, useAuth } from "@clerk/nextjs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { BiSolidLogInCircle } from "react-icons/bi";
@@ -24,7 +29,10 @@ export const ProfileNavbar = () => {
         <TooltipProvider>
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
-              <Button variant="ghost" asChild>
+              <Button
+                variant="ghost"
+                asChild
+              >
                 <Link href="/login">
                   <BiSolidLogInCircle className="w-7 h-7" />
                 </Link>
@@ -36,7 +44,10 @@ export const ProfileNavbar = () => {
           </Tooltip>
         </TooltipProvider>
       ) : (
-        <UserButton userProfileMode="modal" afterSignOutUrl="/" />
+        <UserButton
+          userProfileMode="modal"
+          afterSignOutUrl="/"
+        />
       )}
     </>
   );
