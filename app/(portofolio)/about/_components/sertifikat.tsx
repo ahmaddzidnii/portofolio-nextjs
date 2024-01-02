@@ -8,9 +8,14 @@ import { certificates } from "@/constant/certificates";
 const Sertifikat = () => {
   return (
     <div className="flex flex-col w-full items-center justify-center my-32 md:my-16 sm:my-8">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Sertifikat</h2>
+      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
+        Sertifikat
+      </h2>
       <div className="py-5">
-        <Button className="ms-auto" asChild>
+        <Button
+          className="ms-auto"
+          asChild
+        >
           <Link href="/certificate">Lihat Semua</Link>
         </Button>
       </div>
@@ -25,10 +30,23 @@ const Sertifikat = () => {
             className="col-span-6 relative w-full h-max rounded-2xl border-2 border-solid border-black sm:col-span-12"
           >
             <div className="relative group overflow-hidden">
-              <Image src={item.img} width={300} height={200} alt={item.title} className="w-full h-auto rounded-2xl " />
+              <Image
+                src={item.img}
+                width={300}
+                height={200}
+                alt={item.title}
+                className="w-full h-auto rounded-2xl "
+              />
               <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
-                <Button asChild variant="default" size="lg">
-                  <Link target="_blank" href={item.link}>
+                <Button
+                  asChild
+                  variant="default"
+                  size="lg"
+                >
+                  <Link
+                    target="_blank"
+                    href={item.link}
+                  >
                     Lihat
                   </Link>
                 </Button>
@@ -46,10 +64,23 @@ const Sertifikat = () => {
           className="col-span-6 relative w-full h-max rounded-2xl border-2 border-solid border-black sm:col-span-12"
         >
           <div className="relative group overflow-hidden">
-            <Image src="/img/sertifikat/JSI.png" width={300} height={200} alt="dd" className="w-full h-auto rounded-2xl " />
+            <Image
+              src="/img/sertifikat/JSI.png"
+              width={300}
+              height={200}
+              alt="dd"
+              className="w-full h-auto rounded-2xl "
+            />
             <div className="h-full w-full absolute bg-slate-900/40 flex items-center rounded-2xl justify-center -bottom-10 group-hover:bottom-0 transition-all duration-500 opacity-0 group-hover:opacity-100 hover:cursor-pointer">
-              <Button asChild variant="default" size="lg">
-                <Link target="_blank" href="https://www.sololearn.com/certificates/CC-RZMMCEBH">
+              <Button
+                asChild
+                variant="default"
+                size="lg"
+              >
+                <Link
+                  target="_blank"
+                  href="https://www.sololearn.com/certificates/CC-RZMMCEBH"
+                >
                   Lihat
                 </Link>
               </Button>

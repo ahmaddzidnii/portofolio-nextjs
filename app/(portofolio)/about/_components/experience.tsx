@@ -14,15 +14,33 @@ interface DetailsProps {
   work: string;
 }
 
-const Details = ({ postion, company, companyLink, time, address, work }: DetailsProps) => {
+const Details = ({
+  postion,
+  company,
+  companyLink,
+  time,
+  address,
+  work,
+}: DetailsProps) => {
   const ref = useRef(null);
   return (
-    <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between">
+    <li
+      ref={ref}
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between"
+    >
       <LiIcon reference={ref} />
-      <motion.div initial={{ y: 50 }} whileInView={{ y: 0 }} transition={{ duration: 0.5, type: "spring" }}>
+      <motion.div
+        initial={{ y: 50 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, type: "spring" }}
+      >
         <h3 className="font-bold capitalize text-2xl sm:text-xl xs:text-lg">
           {postion}&nbsp;
-          <Link className="capitalize text-yellow-400" href={companyLink} target="_blank">
+          <Link
+            className="capitalize text-yellow-400"
+            href={companyLink}
+            target="_blank"
+          >
             @{company}
           </Link>
         </h3>
@@ -43,13 +61,20 @@ const Experience = () => {
   });
   return (
     <div className="my-64 flex flex-col items-center md:my-32  sm:my-16 xs:my-8">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Pengalaman</h2>
-      <div ref={ref} className="mx-auto relative">
-        <motion.div style={{ scaleY: scrollYProgress }} className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top" />
+      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
+        Pengalaman
+      </h2>
+      <div
+        ref={ref}
+        className="mx-auto relative"
+      >
+        <motion.div
+          style={{ scaleY: scrollYProgress }}
+          className="absolute -left-1 top-0 w-[4px] h-full bg-yellow-400 origin-top"
+        />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
-          {
-            experience.map((item,index)=>(
-              <Details 
+          {experience.map((item, index) => (
+            <Details
               key={index}
               postion={item.postion}
               company={item.company}
@@ -57,9 +82,8 @@ const Experience = () => {
               time={item.time}
               address={item.address}
               work={item.work}
-              />
-            ))
-          }
+            />
+          ))}
         </ul>
       </div>
     </div>
