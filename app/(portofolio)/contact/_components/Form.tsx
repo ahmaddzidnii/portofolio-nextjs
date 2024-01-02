@@ -9,7 +9,15 @@ import toast from "react-hot-toast";
 import { useUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import UiNoLogin from "@/app/(portofolio)/contact/_components/ui-no-login";
 import SpinnerLoading from "@/components/spinner-loader";
@@ -81,7 +89,10 @@ function FormComponents() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -89,7 +100,10 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} />
+                <Input
+                  placeholder="Name"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,7 +117,11 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} disabled />
+                <Input
+                  placeholder="Email"
+                  {...field}
+                  disabled
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,14 +134,22 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="type your message" className="resize-none h-72" {...field} />
+                <Textarea
+                  placeholder="type your message"
+                  className="resize-none h-72"
+                  {...field}
+                />
               </FormControl>
               <FormDescription>Min 10 characters!</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button disabled={isloading} className="w-full" type="submit">
+        <Button
+          disabled={isloading}
+          className="w-full"
+          type="submit"
+        >
           {isloading ? <SpinnerLoading /> : "Submit"}
         </Button>
       </form>

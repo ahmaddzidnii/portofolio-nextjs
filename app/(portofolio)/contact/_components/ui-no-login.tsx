@@ -12,7 +12,9 @@ const UiNoLogin = () => {
         <h1 className="text-3xl font-bold">Tindakan tidak diizikan</h1>
       </div>
       <Button asChild>
-        <Link href="/login?redirect_url=/contact">Login untuk melanjutkan!</Link>
+        <Link href="/login?redirect_url=/contact">
+          Login untuk melanjutkan!
+        </Link>
       </Button>
     </div>
   );

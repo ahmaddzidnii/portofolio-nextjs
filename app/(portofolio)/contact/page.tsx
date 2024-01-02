@@ -8,7 +8,10 @@ export const metadata = {
 const ContactPage = async () => {
   return (
     <div className="mt-32 w-full min-h-screen xs:mt-8 lg:mt-16">
-      <AnimatedText text="contact me" className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8" />
+      <AnimatedText
+        text="contact me"
+        className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8"
+      />
 
       <div className="w-[70%] mx-auto mt-16  lg:mt-4 sm:w-full">
         <FormComponents />

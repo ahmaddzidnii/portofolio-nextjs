@@ -8,7 +8,10 @@ export const metadata = {
 const ProjectsPage = () => {
   return (
     <main className="flex flex-col w-full items-center justify-center pt-16">
-      <AnimatedText text="My projects." className="lg:!text-7xl sm:!text-6xl xs:!text-3xl mb-16 sm:mb-8" />
+      <AnimatedText
+        text="My projects."
+        className="lg:!text-7xl sm:!text-6xl xs:!text-3xl mb-16 sm:mb-8"
+      />
       <div className="grid gric-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
         <div className="col-span-12">
           <FeaturedProject
@@ -23,11 +26,23 @@ const ProjectsPage = () => {
         </div>
 
         <div className="col-span-6 sm:col-span-12">
-          <Project title="Open API Random." link="https://docsapi.ahmadzidni.site" github="https://github.com/ahmaddzidnii/rest-api-ahmad-zidni" img="/img/projects/open-api.png" type="API" />
+          <Project
+            title="Open API Random."
+            link="https://docsapi.ahmadzidni.site"
+            github="https://github.com/ahmaddzidnii/rest-api-ahmad-zidni"
+            img="/img/projects/open-api.png"
+            type="API"
+          />
         </div>
 
         <div className="col-span-6 sm:col-span-12">
-          <Project title="Anime." link="https://anime.ahmadzidni.site" github="https://github.com/ahmaddzidnii/Web_Anime" img="/img/projects/anime.png" type="Frontend" />
+          <Project
+            title="Anime."
+            link="https://anime.ahmadzidni.site"
+            github="https://github.com/ahmaddzidnii/Web_Anime"
+            img="/img/projects/anime.png"
+            type="Frontend"
+          />
         </div>
 
         <div className="col-span-12">
@@ -42,11 +57,23 @@ const ProjectsPage = () => {
         </div>
 
         <div className="col-span-6 sm:col-span-12">
-          <Project title="Open API Random." link="https://docsapi.ahmadzidni.site" github="https://github.com/ahmaddzidnii/rest-api-ahmad-zidni" img="/img/projects/open-api.png" type="API" />
+          <Project
+            title="Open API Random."
+            link="https://docsapi.ahmadzidni.site"
+            github="https://github.com/ahmaddzidnii/rest-api-ahmad-zidni"
+            img="/img/projects/open-api.png"
+            type="API"
+          />
         </div>
 
         <div className="col-span-6 sm:col-span-12">
-          <Project title="Anime." link="https://anime.ahmadzidni.site" github="https://github.com/ahmaddzidnii/Web_Anime" img="/img/projects/anime.png" type="Frontend" />
+          <Project
+            title="Anime."
+            link="https://anime.ahmadzidni.site"
+            github="https://github.com/ahmaddzidnii/Web_Anime"
+            img="/img/projects/anime.png"
+            type="Frontend"
+          />
         </div>
       </div>
     </main>
