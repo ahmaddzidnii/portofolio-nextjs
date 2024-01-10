@@ -6,7 +6,7 @@ import { z } from "zod";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
-import { useUser } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -37,6 +37,7 @@ const formSchema = z.object({
 
 function FormComponents() {
   const { isLoaded, isSignedIn, user } = useUser();
+  const { getToken } = useAuth();
   const [isloading, setIsLoading] = useState<boolean>(false);
 
   // 1. Define your form.
@@ -58,7 +59,7 @@ function FormComponents() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "ahmad",
+          Authorization: `Bearer ${await getToken()}`,
         },
         body: JSON.stringify(values),
       });

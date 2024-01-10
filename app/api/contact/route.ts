@@ -1,14 +1,9 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const apiKey = request.headers.get("Authorization");
   const body = await request.json();
 
   const { username, email, message } = body;
-
-  if (apiKey !== "ahmad") {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  }
 
   const bot_token = process.env.BOT_TOKEN;
   const chat_id = process.env.CHAT_ID;
