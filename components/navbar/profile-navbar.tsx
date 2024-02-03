@@ -1,15 +1,16 @@
 "use client";
+
+import Link from "next/link";
+import { BiSolidLogInCircle } from "react-icons/bi";
+import { useEffect, useState } from "react";
 import { UserButton, useAuth } from "@clerk/nextjs";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import Link from "next/link";
-import { BiSolidLogInCircle } from "react-icons/bi";
-import { useEffect, useState } from "react";
-import { Skeleton } from "../ui/skeleton";
 
 export const ProfileNavbar = () => {
   const { isSignedIn } = useAuth();
@@ -20,7 +21,7 @@ export const ProfileNavbar = () => {
   }, []);
 
   if (!isMounted) {
-    return <Skeleton className="w-9 h-9 rounded-full bg-neutral-300" />;
+    return null;
   }
   return (
     <>

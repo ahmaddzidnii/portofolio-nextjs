@@ -8,7 +8,7 @@ const PortofolioLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Toaster position="top-center" />
       <Navbar />
-      <main className="pt-5  container">{children}</main>
+      <main className="pt-10  container">{children}</main>
       <Footer />
     </>
   );
