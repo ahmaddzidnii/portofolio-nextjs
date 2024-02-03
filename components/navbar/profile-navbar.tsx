@@ -6,7 +6,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import { BiSolidLogInCircle } from "react-icons/bi";
 import { useEffect, useState } from "react";
@@ -29,14 +28,9 @@ export const ProfileNavbar = () => {
         <TooltipProvider>
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                asChild
-              >
-                <Link href="/login">
-                  <BiSolidLogInCircle className="w-7 h-7" />
-                </Link>
-              </Button>
+              <Link href="/login">
+                <BiSolidLogInCircle className="w-8 h-8" />
+              </Link>
             </TooltipTrigger>
             <TooltipContent>
               <p>Login Now!</p>
