@@ -1,11 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
@@ -67,14 +72,22 @@ module.exports = {
       },
     },
     backgroundImage: {
-      circularLight: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffffff 8px,#ffffff 100px)",
-      circularDark: "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 8px,#0a0a0a 100px)",
-      circularLightLg: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 8px,#ffffff 80px)",
-      circularDarkLg: "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 8px,#0a0a0a 80px)",
-      circularLightMd: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 6px,#ffffff 60px)",
-      circularDarkMd: "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 6px,#0a0a0a 60px)",
-      circularLightSm: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 4px,#ffffff 40px)",
-      circularDarkSm: "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 4px,#0a0a0a 40px)",
+      circularLight:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #ffffff 8px,#ffffff 100px)",
+      circularDark:
+        "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 8px,#0a0a0a 100px)",
+      circularLightLg:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 8px,#ffffff 80px)",
+      circularDarkLg:
+        "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 8px,#0a0a0a 80px)",
+      circularLightMd:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 6px,#ffffff 60px)",
+      circularDarkMd:
+        "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 6px,#0a0a0a 60px)",
+      circularLightSm:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px #ffffff 4px,#ffffff 40px)",
+      circularDarkSm:
+        "repeating-radial-gradient(rgba(255,255,255,0.6) 2px,#0a0a0a 4px,#0a0a0a 40px)",
     },
 
     screens: {

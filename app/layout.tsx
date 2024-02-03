@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import { Suspense } from "react";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -46,9 +45,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Suspense fallback={<></>}>
-            <ClerkCustomProvider>{children}</ClerkCustomProvider>
-          </Suspense>
+          <ClerkCustomProvider>{children}</ClerkCustomProvider>
         </ThemeProvider>
       </body>
     </html>
