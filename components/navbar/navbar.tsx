@@ -32,7 +32,7 @@ const Navbar = () => {
               <Logo />
             </div>
             <NavLink />
-            <nav className="ms-auto flex lg:hidden items-center gap-x-3 mr-4">
+            <nav className="ms-auto flex lg:hidden items-center gap-x-3 mr-4 h-full">
               <TooltipProvider>
                 {endNavbar.map((item) => (
                   <Tooltip
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="w-full hidden lg:block">
           <div
             className={cn(
-              " transition-all ease-in-out duration-300 $ bg-background dark:bg-[#1f1f1f] py-4 border-b shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60",
+              "transition-all ease-in-out duration-300 $ bg-background dark:bg-[#1f1f1f] py-4 border-b shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60",
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
             )}
           >
@@ -87,6 +87,7 @@ const Navbar = () => {
                   ></span>
                 </a>
               ))}
+              <ModeToggle />
             </div>
             <div className="flex justify-center w-full mt-5">
               {endNavbar.map((item) => (

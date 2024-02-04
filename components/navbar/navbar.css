@@ -11,11 +11,11 @@
   }
 }
 
-:is(.dark) {
+/* :is(.dark) {
   label div.bar span {
     background: #ffffff;
   }
-}
+} */
 
 label {
   width: 32px;
