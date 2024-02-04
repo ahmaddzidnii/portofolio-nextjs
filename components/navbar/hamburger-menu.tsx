@@ -29,9 +29,9 @@ export const HamburgerMenu = ({ onChangeCallback }: HamburgerMenuProps) => {
         onChange={handleInputChange}
       />
       <div className="bar">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span className="dark:bg-white"></span>
+        <span className="dark:bg-white"></span>
+        <span className="dark:bg-white"></span>
       </div>
     </label>
   );
