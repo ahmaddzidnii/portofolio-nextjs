@@ -20,7 +20,7 @@ const DetailCertificate = ({
   summary,
 }: DetailCertificateProps) => {
   return (
-    <article className="w-full mb-8 flex items-center justify-between rounded-3xl border border-solid border-yellow-400 bg-white dark:bg-[#0a0a0a]  shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-2xl xs:p-4 ">
+    <article className="relative mb-8 flex w-full items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-yellow-400  bg-white p-12 shadow-2xl dark:bg-[#0a0a0a] lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-2xl xs:p-4 ">
       <Link
         href={link}
         target="_blank"
@@ -33,20 +33,20 @@ const DetailCertificate = ({
           loading="eager"
           width={400}
           height={300}
-          className="w-full h-auto"
+          className="h-auto w-full"
           whileHover={{
             scale: 1.05,
           }}
           transition={{ duration: 0.2 }}
         />
-        <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-yellow-400 rounded-br-3xl xs:-right-2 xs:h-[102%] xs:w-full xs:rounded-[1.5rem]" />
+        <div className="absolute -right-3 top-0 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-yellow-400 xs:-right-2 xs:h-[102%] xs:w-full xs:rounded-[1.5rem]" />
       </Link>
-      <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6  ">
-        <span className="font-medium text-xl xs:text-base">{credentials}</span>
+      <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6  ">
+        <span className="text-xl font-medium xs:text-base">{credentials}</span>
         <Link
           href={link}
           target="_blank"
-          className="hover:underline underline-offset-2"
+          className="underline-offset-2 hover:underline"
         >
           <h2 className="my-2 w-full text-left text-4xl font-bold xs:text-sm">
             {title}
@@ -58,7 +58,7 @@ const DetailCertificate = ({
           <Link
             href={link}
             target="_blank"
-            className=" rounded-lg bg-slate-900 text-white px-6 p-2 text-lg font-semibold text-light sm:px-4 sm:text-base"
+            className=" text-light rounded-lg bg-slate-900 p-2 px-6 text-lg font-semibold text-white sm:px-4 sm:text-base"
           >
             Visit Certificate
           </Link>

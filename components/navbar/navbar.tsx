@@ -23,32 +23,22 @@ const Navbar = () => {
     setIsOpen(value);
   };
   return (
-    <header className="fixed top-0 w-full z-50 ">
+    <header className="fixed top-0 z-50 w-full ">
       <div className="flex flex-col">
-        <div className="bg-background dark:bg-[#1f1f1f]  w-full py-4 border-b shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60">
-          <div className="flex  justify-between h-12 w-full  items-center container-nav">
+        <div className="w-full border-b  bg-background py-4 shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:bg-[#1f1f1f] dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60">
+          <div className="container-nav  flex h-12 w-full  items-center justify-between">
             <div className="flex items-center gap-x-4 ">
               <HamburgerMenu onChangeCallback={hamburgerCallback} />
               <Logo />
             </div>
             <NavLink />
-            <nav className="ms-auto flex lg:hidden items-center gap-x-3 mr-4 h-full">
+            <nav className="mr-4 ms-auto flex h-full items-center gap-x-3 lg:hidden">
               <TooltipProvider>
                 {endNavbar.map((item) => (
-                  <Tooltip
-                    key={item.name}
-                    delayDuration={200}
-                  >
+                  <Tooltip key={item.name} delayDuration={200}>
                     <TooltipTrigger asChild>
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="icon"
-                      >
-                        <Link
-                          href={item.href}
-                          target="_blank"
-                        >
+                      <Button asChild variant="ghost" size="icon">
+                        <Link href={item.href} target="_blank">
                           {item.icon}
                         </Link>
                       </Button>
@@ -65,42 +55,34 @@ const Navbar = () => {
             <ProfileNavbar />
           </div>
         </div>
-        <div className="w-full hidden lg:block">
+        <div className="hidden w-full lg:block">
           <div
             className={cn(
-              "transition-all ease-in-out duration-300 $ bg-background dark:bg-[#1f1f1f] py-4 border-b shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60",
-              isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+              "$ border-b bg-background py-4 shadow-sm backdrop-blur-2xl transition-all duration-300 ease-in-out supports-[backdrop-filter]:bg-background/60 dark:bg-[#1f1f1f] dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60",
+              isOpen ? "visible opacity-100" : "invisible opacity-0",
             )}
           >
-            <div className="flex flex-col w-full items-center gap-5 pt-5">
+            <div className="flex w-full flex-col items-center gap-5 pt-5">
               {midNavbar.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative group font-bold"
+                  className="group relative font-bold"
                 >
                   {item.name}
                   <span
                     className={cn(
-                      "h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 "
+                      "ease absolute  -bottom-0.5 left-0 inline-block h-0.5 bg-slate-200 transition-[width] duration-300 group-hover:w-full ",
                     )}
                   ></span>
                 </a>
               ))}
               <ModeToggle />
             </div>
-            <div className="flex justify-center w-full mt-5">
+            <div className="mt-5 flex w-full justify-center">
               {endNavbar.map((item) => (
-                <Button
-                  key={item.name}
-                  asChild
-                  variant="ghost"
-                  size="default"
-                >
-                  <Link
-                    href={item.href}
-                    target="_blank"
-                  >
+                <Button key={item.name} asChild variant="ghost" size="default">
+                  <Link href={item.href} target="_blank">
                     {item.icon}
                   </Link>
                 </Button>

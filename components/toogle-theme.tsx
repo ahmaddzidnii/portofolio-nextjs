@@ -14,16 +14,13 @@ export function ModeToggle() {
 
   return (
     <div className="w-36 ">
-      <div className="flex items-center space-x-2 w-full">
+      <div className="flex w-full items-center space-x-2">
         <Switch
           id="toggle-mode"
           disabled={!isMounted}
           onCheckedChange={(value) => setTheme(value ? "dark" : "light")}
         />
-        <Label
-          htmlFor="toggle-mode"
-          className="w-full"
-        >
+        <Label htmlFor="toggle-mode" className="w-full">
           Dark Mode
         </Label>
       </div>

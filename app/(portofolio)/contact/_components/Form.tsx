@@ -90,10 +90,7 @@ function FormComponents() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
           name="username"
@@ -101,10 +98,7 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="Name"
-                  {...field}
-                />
+                <Input placeholder="Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -118,11 +112,7 @@ function FormComponents() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="Email"
-                  {...field}
-                  disabled
-                />
+                <Input placeholder="Email" {...field} disabled />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -137,7 +127,7 @@ function FormComponents() {
               <FormControl>
                 <Textarea
                   placeholder="type your message"
-                  className="resize-none h-72"
+                  className="h-72 resize-none"
                   {...field}
                 />
               </FormControl>
@@ -146,11 +136,7 @@ function FormComponents() {
             </FormItem>
           )}
         />
-        <Button
-          disabled={isloading}
-          className="w-full"
-          type="submit"
-        >
+        <Button disabled={isloading} className="w-full" type="submit">
           {isloading ? <SpinnerLoading /> : "Submit"}
         </Button>
       </form>

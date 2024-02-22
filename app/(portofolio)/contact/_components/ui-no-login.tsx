@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const UiNoLogin = () => {
   return (
-    <div className="min-w-[80%] min-h-[80%] flex flex-col justify-center items-center">
+    <div className="flex min-h-[80%] min-w-[80%] flex-col items-center justify-center">
       <div className="flex items-center gap-x-5">
-        <AlertTriangle className="w-20 h-20" />
+        <AlertTriangle className="h-20 w-20" />
         <h1 className="text-3xl font-bold">Tindakan tidak diizikan</h1>
       </div>
       <Button asChild>

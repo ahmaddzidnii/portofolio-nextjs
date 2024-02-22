@@ -15,7 +15,7 @@ interface ProjectProps {
 
 const Project = ({ title, type, img, link, github }: ProjectProps) => {
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-yellow-400 bg-white dark:bg-[#0a0a0a] p-6 relative xs:p-4">
+    <article className="relative flex w-full flex-col items-center justify-center rounded-2xl border border-solid border-yellow-400 bg-white p-6 dark:bg-[#0a0a0a] xs:p-4">
       <Link
         href={link}
         target="_blank"
@@ -26,40 +26,36 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
           alt={title}
           width={400}
           height={300}
-          className="w-full h-auto"
+          className="h-auto w-full"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         />
-        <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-yellow-400 rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
+        <div className="absolute -right-3 top-0 -z-10 h-[103%] w-[101%] rounded-[2rem] rounded-br-3xl bg-yellow-400 md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
       </Link>
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="font-medium text-xl lg:text-lg md:text-base">
+      <div className="mt-4 flex w-full flex-col items-start justify-between">
+        <span className="text-xl font-medium lg:text-lg md:text-base">
           {type}
         </span>
         <Link
           href={link}
           target="_blank"
-          className="hover:underline underline-offset-2"
+          className="underline-offset-2 hover:underline"
         >
           <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl ">
             {title}
           </h2>
         </Link>
 
-        <div className="mt-2 w-full flex items-center justify-between">
+        <div className="mt-2 flex w-full items-center justify-between">
           <Link
             href={link}
             target="_blank"
-            className="text-lg font-semibold text-light underline md:text-base"
+            className="text-light text-lg font-semibold underline md:text-base"
           >
             Visit
           </Link>
-          <Link
-            href={github}
-            target="_blank"
-            className="w-8 md:w-6"
-          >
-            <AiFillGithub className="w-full h-full" />
+          <Link href={github} target="_blank" className="w-8 md:w-6">
+            <AiFillGithub className="h-full w-full" />
           </Link>
         </div>
       </div>

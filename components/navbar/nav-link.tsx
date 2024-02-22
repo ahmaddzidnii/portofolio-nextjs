@@ -8,18 +8,18 @@ const NavLink = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="gap-x-5 mx-auto flex lg:hidden">
+    <nav className="mx-auto flex gap-x-5 lg:hidden">
       {midNavbar.map((item) => (
         <Link
           key={item.name}
           href={item.href}
-          className="relative group font-bold"
+          className="group relative font-bold"
         >
           {item.name}
           <span
             className={cn(
-              "h-0.5 inline-block  bg-slate-200 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ",
-              item.href === pathname ? "w-full" : "w-0"
+              "ease absolute  -bottom-0.5 left-0 inline-block h-0.5 bg-slate-200 transition-[width] duration-300 group-hover:w-full ",
+              item.href === pathname ? "w-full" : "w-0",
             )}
           ></span>
         </Link>

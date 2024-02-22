@@ -30,7 +30,7 @@ export const ProfileNavbar = () => {
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
               <Link href="/login">
-                <BiSolidLogInCircle className="w-8 h-8" />
+                <BiSolidLogInCircle className="h-8 w-8" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -39,10 +39,7 @@ export const ProfileNavbar = () => {
           </Tooltip>
         </TooltipProvider>
       ) : (
-        <UserButton
-          userProfileMode="modal"
-          afterSignOutUrl="/"
-        />
+        <UserButton userProfileMode="modal" afterSignOutUrl="/" />
       )}
     </>
   );

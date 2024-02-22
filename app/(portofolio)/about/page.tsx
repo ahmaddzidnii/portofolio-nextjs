@@ -10,12 +10,12 @@ export const metadata = {
 };
 const AboutPage = async () => {
   return (
-    <main className="flex flex-col w-full items-center justify-center pt-16">
+    <main className="flex w-full flex-col items-center justify-center pt-16">
       <AnimatedText
         text="About Me."
-        className="lg:!text-7xl sm:!text-6xl xs:!text-3xl  mb-16 sm:mb-8"
+        className="mb-16 lg:!text-7xl sm:mb-8  sm:!text-6xl xs:!text-3xl"
       />
-      <div className="w-full grid grid-cols-8 gap-16 sm:gap-8  xl:col-span-4   ">
+      <div className="grid w-full grid-cols-8 gap-16 xl:col-span-4  sm:gap-8   ">
         <div className="col-span-3 flex flex-col items-start justify-start md:order-2 md:col-span-8">
           <h2 className="mb-4 text-lg font-bold uppercase">Biography</h2>
           <p className="font-medium">
@@ -35,13 +35,13 @@ const AboutPage = async () => {
           </p>
         </div>
 
-        <div className="col-span-3 relative w-full h-max rounded-2xl border-2 border-solid border-black xl:col-span-4 md:order-1 md:col-span-8">
+        <div className="relative col-span-3 h-max w-full rounded-2xl border-2 border-solid border-black xl:col-span-4 md:order-1 md:col-span-8">
           <img
             src="https://placehold.co/100x150"
             alt="dd"
-            className="w-full h-auto rounded-2xl"
+            className="h-auto w-full rounded-2xl"
           />
-          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-yellow-400" />
+          <div className="absolute -right-3 top-0 -z-10 h-[103%] w-[102%] rounded-2xl bg-yellow-400" />
         </div>
 
         <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center  md:order-3">

@@ -2,7 +2,7 @@ import { Logo } from "./logo";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-20 border-t shadow-sm flex justify-between items-center px-5 mt-20 sm:justify-center">
+    <footer className="mt-20 flex h-20 w-full items-center justify-between border-t px-5 shadow-sm sm:justify-center">
       <div className=" block sm:hidden">
         <Logo />
       </div>

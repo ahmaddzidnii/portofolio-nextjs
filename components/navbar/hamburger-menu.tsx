@@ -18,10 +18,7 @@ export const HamburgerMenu = ({ onChangeCallback }: HamburgerMenuProps) => {
   };
 
   return (
-    <label
-      htmlFor="check"
-      className="hidden lg:block"
-    >
+    <label htmlFor="check" className="hidden lg:block">
       <input
         type="checkbox"
         id="check"
