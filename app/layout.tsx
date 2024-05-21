@@ -5,7 +5,6 @@ import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site-config";
-import { ClerkCustomProvider } from "@/providers/clerk-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,7 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkCustomProvider>{children}</ClerkCustomProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -6,7 +6,7 @@ import { z } from "zod";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import UiNoLogin from "@/app/(portofolio)/contact/_components/ui-no-login";
 import SpinnerLoading from "@/components/spinner-loader";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -36,8 +35,6 @@ const formSchema = z.object({
 });
 
 function FormComponents() {
-  const { isLoaded, isSignedIn, user } = useUser();
-  const { getToken } = useAuth();
   const [isloading, setIsLoading] = useState<boolean>(false);
 
   // 1. Define your form.
@@ -45,7 +42,7 @@ function FormComponents() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
-      email: user?.emailAddresses[0]?.emailAddress,
+      email: "",
       message: "",
     },
   });
@@ -57,15 +54,11 @@ function FormComponents() {
       setIsLoading(true);
       const send = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${await getToken()}`,
-        },
         body: JSON.stringify(values),
       });
       form.reset({
         username: "",
-        email: user?.emailAddresses[0]?.emailAddress,
+        email: "",
         message: "",
       });
       setIsLoading(false);
@@ -78,14 +71,6 @@ function FormComponents() {
     } catch (error) {
       toast.error("Gagal megirim Pesan!");
     }
-  }
-
-  if (!isLoaded) {
-    return <div className="text-center text-3xl">Loading..</div>;
-  }
-
-  if (!isSignedIn) {
-    return <UiNoLogin />;
   }
 
   return (
@@ -106,13 +91,12 @@ function FormComponents() {
         />
         <FormField
           control={form.control}
-          defaultValue={user?.emailAddresses[0]?.emailAddress}
           name="email"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} disabled />
+                <Input placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -144,4 +128,4 @@ function FormComponents() {
   );
 }
 
-export default dynamic(() => Promise.resolve(FormComponents), { ssr: false });
+export default FormComponents;
