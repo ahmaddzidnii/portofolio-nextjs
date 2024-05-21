@@ -1,29 +1,19 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { DarkModeToggle } from "react-dark-mode-toggle-2";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => setIsMounted(true), []);
+  const { setTheme, theme } = useTheme();
 
   return (
-    <div className="w-36 ">
-      <div className="flex w-full items-center space-x-2">
-        <Switch
-          id="toggle-mode"
-          disabled={!isMounted}
-          onCheckedChange={(value) => setTheme(value ? "dark" : "light")}
-        />
-        <Label htmlFor="toggle-mode" className="w-full">
-          Dark Mode
-        </Label>
-      </div>
+    <div className="flex w-full items-center justify-center">
+      <DarkModeToggle
+        onChange={(isDarkMode) => setTheme(isDarkMode ? "dark" : "light")}
+        isDarkMode={theme === "dark"}
+        size={60}
+      />
     </div>
   );
 }

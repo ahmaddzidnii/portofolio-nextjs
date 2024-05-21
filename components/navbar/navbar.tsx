@@ -38,12 +38,14 @@ const Navbar = () => {
               <TooltipProvider>
                 {endNavbar.map((item) => (
                   <Tooltip key={item.name} delayDuration={200}>
-                    <TooltipTrigger asChild>
-                      <Button asChild variant="ghost" size="icon">
-                        <Link href={item.href} target="_blank">
-                          {item.icon}
-                        </Link>
-                      </Button>
+                    <TooltipTrigger>
+                      <Link
+                        className="h-8 w-8"
+                        href={item.href}
+                        target="_blank"
+                      >
+                        {item.icon}
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{item.tooltip}</p>
@@ -93,7 +95,7 @@ const Navbar = () => {
           <div className="mt-5 flex w-full justify-center">
             {endNavbar.map((item) => (
               <Button key={item.name} asChild variant="ghost" size="default">
-                <Link href={item.href} target="_blank">
+                <Link className="p-0" href={item.href} target="_blank">
                   {item.icon}
                 </Link>
               </Button>

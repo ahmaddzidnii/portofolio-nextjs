@@ -26,6 +26,7 @@
     "next-nprogress-bar": "^2.3.12",
     "next-themes": "^0.2.1",
     "react": "^18",
+    "react-dark-mode-toggle-2": "^2.0.9",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.48.2",
