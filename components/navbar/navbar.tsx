@@ -20,6 +20,7 @@ import { HamburgerMenu } from "./hamburger-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const hamburgerCallback = (value: boolean) => {
     setIsOpen(value);
   };
@@ -57,7 +58,7 @@ const Navbar = () => {
       </div>
       <div className="hidden w-full lg:block">
         <motion.div
-          className="border-b bg-background py-4 shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:bg-[#1f1f1f] dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60"
+          className="hidden border-b bg-background py-4 shadow-sm backdrop-blur-2xl supports-[backdrop-filter]:bg-background/60 dark:bg-[#1f1f1f] dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60"
           animate={
             isOpen
               ? {
@@ -100,41 +101,6 @@ const Navbar = () => {
           </div>
         </motion.div>
       </div>
-      {/* <div className="hidden w-full lg:block">
-        <div
-          className={cn(
-            " border-b bg-background py-4 shadow-sm backdrop-blur-2xl transition-all duration-300 ease-in-out supports-[backdrop-filter]:bg-background/60 dark:bg-[#1f1f1f] dark:supports-[backdrop-filter]:bg-[#1f1f1f]/60",
-            isOpen ? "visible opacity-100" : "invisible opacity-0",
-          )}
-        >
-          <div className="flex w-full flex-col items-center gap-5 pt-5">
-            {midNavbar.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="group relative font-bold"
-              >
-                {item.name}
-                <span
-                  className={cn(
-                    "ease absolute  -bottom-0.5 left-0 inline-block h-0.5 bg-slate-200 transition-[width] duration-300 group-hover:w-full ",
-                  )}
-                ></span>
-              </a>
-            ))}
-            <ModeToggle />
-          </div>
-          <div className="mt-5 flex w-full justify-center">
-            {endNavbar.map((item) => (
-              <Button key={item.name} asChild variant="ghost" size="default">
-                <Link href={item.href} target="_blank">
-                  {item.icon}
-                </Link>
-              </Button>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </header>
   );
 };
