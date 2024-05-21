@@ -4,9 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
-import { useAuth } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import {
